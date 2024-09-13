@@ -1,0 +1,498 @@
+2024-09-07 08:50:45.990  INFO 6516 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 21 with PID 6516 (E:\coding\bilibili\javaClass\campus-bbs\my-project-backend\target\classes started by yfh13 in E:\coding\bilibili\javaClass\campus-bbs)
+2024-09-07 08:50:45.991  INFO 6516 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-09-07 08:50:46.719  INFO 6516 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-07 08:50:46.734  INFO 6516 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-07 08:50:46.759  INFO 6516 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-09-07 08:50:47.288  INFO 6516 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-07 08:50:47.299  INFO 6516 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-07 08:50:47.299  INFO 6516 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-07 08:50:47.351  INFO 6516 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-07 08:50:47.351  INFO 6516 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1323 ms
+2024-09-07 08:50:48.084  INFO 6516 --- [main] (system) com.example.config.MinioConfiguration    : Init minio client
+2024-09-07 08:50:48.310  INFO 6516 --- [main] (system) r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name accountServiceImpl
+2024-09-07 08:50:48.752  INFO 6516 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-09-07 08:50:48.754  INFO 6516 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-09-07 08:50:48.808  INFO 6516 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#c5a2d5:0/SimpleConnection@44f338ec [delegate=amqp://guest@127.0.0.1:5672/, localPort=6902]
+2024-09-07 08:50:48.839  INFO 6516 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 3.302 seconds (process running for 4.101)
+2024-09-07 08:52:28.636  INFO 6516 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-07 08:52:28.637  INFO 6516 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-07 08:52:28.638  INFO 6516 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-09-07 08:52:28.928  INFO 6516 --- [http-nio-8080-exec-1] (145049261069963264) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 08:52:29.054  INFO 6516 --- [http-nio-8080-exec-1] (145049261069963264) com.example.filter.RequestLogFilter      : 请求处理耗时: 128ms | 响应结果: {"code":401,"data":null,"id":145049261069963264,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:52:29.125  INFO 6516 --- [http-nio-8080-exec-3] (145049261904629760) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 08:52:29.203  INFO 6516 --- [http-nio-8080-exec-3] (145049261904629760) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-07 08:52:29.407  INFO 6516 --- [http-nio-8080-exec-3] (145049261904629760) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b7334ac
+2024-09-07 08:52:29.408  INFO 6516 --- [http-nio-8080-exec-3] (145049261904629760) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-07 08:52:29.485  INFO 6516 --- [http-nio-8080-exec-3] (145049261904629760) com.example.filter.RequestLogFilter      : 请求处理耗时: 360ms | 响应结果: {"id":145049261904629760,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 08:52:29.663 ERROR 6516 --- [http-nio-8080-exec-10] (system) o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:9000
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at io.minio.S3Base.execute(S3Base.java:508)
+	at io.minio.S3Base.getRegion(S3Base.java:661)
+	at io.minio.S3Base.execute(S3Base.java:445)
+	at io.minio.S3Base.executeGet(S3Base.java:685)
+	at io.minio.MinioClient.getObject(MinioClient.java:248)
+	at com.example.service.impl.ImageServiceImpl.fetchImageFromMinio(ImageServiceImpl.java:63)
+	at com.example.controller.ObjectController.fetchImage(ObjectController.java:37)
+	at com.example.controller.ObjectController.imageFetch(ObjectController.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.filter.RequestLogFilter.doFilterInternal(RequestLogFilter.java:37)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.filter.FlowLimitingFilter.doFilter(FlowLimitingFilter.java:51)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.filter.CorsFilter.doFilter(CorsFilter.java:34)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+	Suppressed: java.net.ConnectException: Failed to connect to localhost/127.0.0.1:9000
+		... 139 common frames omitted
+	Caused by: java.net.ConnectException: Connection refused: no further information
+		at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+		at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+		at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+		... 138 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+	... 138 common frames omitted
+
+2024-09-07 08:52:36.356  INFO 6516 --- [http-nio-8080-exec-9] (145049292233641984) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33892115545592","latitude":"30.319752372197318"}
+2024-09-07 08:52:36.358  INFO 6516 --- [http-nio-8080-exec-9] (145049292233641984) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"code":401,"data":null,"id":145049292233641984,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:52:36.375  INFO 6516 --- [http-nio-8080-exec-5] (145049292313333760) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33892115545592","latitude":"30.319752372197318"}
+2024-09-07 08:52:37.241  INFO 6516 --- [http-nio-8080-exec-5] (145049292313333760) com.example.filter.RequestLogFilter      : 请求处理耗时: 866ms | 响应结果: {"id":145049292313333760,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 08:53:53.590  INFO 6516 --- [http-nio-8080-exec-8] (145049616176517120) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 08:53:53.590  INFO 6516 --- [http-nio-8080-exec-8] (145049616176517120) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145049616176517120,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:53:53.596  INFO 6516 --- [http-nio-8080-exec-6] (145049616201682944) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 08:53:53.600  INFO 6516 --- [http-nio-8080-exec-6] (145049616201682944) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":145049616201682944,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 08:53:53.690 ERROR 6516 --- [http-nio-8080-exec-2] (system) o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:9000
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at io.minio.S3Base.execute(S3Base.java:508)
+	at io.minio.S3Base.getRegion(S3Base.java:661)
+	at io.minio.S3Base.execute(S3Base.java:445)
+	at io.minio.S3Base.executeGet(S3Base.java:685)
+	at io.minio.MinioClient.getObject(MinioClient.java:248)
+	at com.example.service.impl.ImageServiceImpl.fetchImageFromMinio(ImageServiceImpl.java:63)
+	at com.example.controller.ObjectController.fetchImage(ObjectController.java:37)
+	at com.example.controller.ObjectController.imageFetch(ObjectController.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.filter.RequestLogFilter.doFilterInternal(RequestLogFilter.java:37)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.filter.FlowLimitingFilter.doFilter(FlowLimitingFilter.java:51)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.filter.CorsFilter.doFilter(CorsFilter.java:34)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+	Suppressed: java.net.ConnectException: Failed to connect to localhost/127.0.0.1:9000
+		... 139 common frames omitted
+	Caused by: java.net.ConnectException: Connection refused: no further information
+		at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+		at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+		at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+		... 138 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+	... 138 common frames omitted
+
+2024-09-07 08:53:59.531  INFO 6516 --- [http-nio-8080-exec-4] (145049641094877184) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33889878515527","latitude":"30.319793115272642"}
+2024-09-07 08:53:59.531  INFO 6516 --- [http-nio-8080-exec-4] (145049641094877184) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145049641094877184,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:53:59.540  INFO 6516 --- [http-nio-8080-exec-1] (145049641128431616) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33889878515527","latitude":"30.319793115272642"}
+2024-09-07 08:54:00.341  INFO 6516 --- [http-nio-8080-exec-1] (145049641128431616) com.example.filter.RequestLogFilter      : 请求处理耗时: 802ms | 响应结果: {"id":145049641128431616,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 08:57:38.495  INFO 6516 --- [http-nio-8080-exec-10] (145050559492263936) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 08:57:38.496  INFO 6516 --- [http-nio-8080-exec-10] (145050559492263936) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"code":401,"data":null,"id":145050559492263936,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:57:38.501  INFO 6516 --- [http-nio-8080-exec-9] (145050559521624064) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 08:57:38.505  INFO 6516 --- [http-nio-8080-exec-9] (145050559521624064) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":145050559521624064,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 08:57:45.191  INFO 6516 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-09-07 08:57:46.185  INFO 6516 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-09-07 08:57:46.211  INFO 6516 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-07 08:57:46.215  INFO 6516 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-09-07 08:57:47.934  INFO 24660 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 21 with PID 24660 (E:\coding\bilibili\javaClass\campus-bbs\my-project-backend\target\classes started by yfh13 in E:\coding\bilibili\javaClass\campus-bbs)
+2024-09-07 08:57:47.935  INFO 24660 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-09-07 08:57:48.449  INFO 24660 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-07 08:57:48.450  INFO 24660 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-07 08:57:48.464  INFO 24660 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-09-07 08:57:48.834  INFO 24660 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-07 08:57:48.850  INFO 24660 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-07 08:57:48.850  INFO 24660 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-07 08:57:48.907  INFO 24660 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-07 08:57:48.907  INFO 24660 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 948 ms
+2024-09-07 08:57:49.453  INFO 24660 --- [main] (system) com.example.config.MinioConfiguration    : Init minio client
+2024-09-07 08:57:49.622  INFO 24660 --- [main] (system) r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name accountServiceImpl
+2024-09-07 08:57:49.966  INFO 24660 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-09-07 08:57:49.968  INFO 24660 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-09-07 08:57:49.998  INFO 24660 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3eedd0e3:0/SimpleConnection@3f31892e [delegate=amqp://guest@127.0.0.1:5672/, localPort=52095]
+2024-09-07 08:57:50.025  INFO 24660 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 2.433 seconds (process running for 2.897)
+2024-09-07 08:57:51.097  INFO 24660 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-07 08:57:51.097  INFO 24660 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-07 08:57:51.098  INFO 24660 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-09-07 08:57:51.354  INFO 24660 --- [http-nio-8080-exec-1] (145050613426819072) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33887524325293","latitude":"30.319813481421704"}
+2024-09-07 08:57:51.427  INFO 24660 --- [http-nio-8080-exec-1] (145050613426819072) com.example.filter.RequestLogFilter      : 请求处理耗时: 74ms | 响应结果: {"code":401,"data":null,"id":145050613426819072,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:57:51.460  INFO 24660 --- [http-nio-8080-exec-2] (145050613875609600) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33887524325293","latitude":"30.319813481421704"}
+2024-09-07 08:57:51.924  INFO 24660 --- [http-nio-8080-exec-2] (145050613875609600) com.example.filter.RequestLogFilter      : 请求处理耗时: 464ms | 响应结果: {"id":145050613875609600,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 08:57:54.508  INFO 24660 --- [http-nio-8080-exec-4] (145050626659848192) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 08:57:54.509  INFO 24660 --- [http-nio-8080-exec-4] (145050626659848192) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145050626659848192,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:57:54.513  INFO 24660 --- [http-nio-8080-exec-3] (145050626680819712) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 08:57:54.560  INFO 24660 --- [http-nio-8080-exec-3] (145050626680819712) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-07 08:57:54.664  INFO 24660 --- [http-nio-8080-exec-3] (145050626680819712) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e8bfb5b
+2024-09-07 08:57:54.664  INFO 24660 --- [http-nio-8080-exec-3] (145050626680819712) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-07 08:57:54.690  INFO 24660 --- [http-nio-8080-exec-3] (145050626680819712) com.example.filter.RequestLogFilter      : 请求处理耗时: 177ms | 响应结果: {"id":145050626680819712,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 08:57:54.747  INFO 24660 --- [http-nio-8080-exec-6] (145050627662286848) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33887524325293","latitude":"30.319813481421704"}
+2024-09-07 08:57:54.794  INFO 24660 --- [http-nio-8080-exec-6] (145050627662286848) com.example.filter.RequestLogFilter      : 请求处理耗时: 47ms | 响应结果: {"id":145050627662286848,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 08:59:32.712  INFO 24660 --- [http-nio-8080-exec-9] (145051038557278208) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 08:59:32.713  INFO 24660 --- [http-nio-8080-exec-9] (145051038557278208) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145051038557278208,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:59:32.717  INFO 24660 --- [http-nio-8080-exec-10] (145051038578249728) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 08:59:32.720  INFO 24660 --- [http-nio-8080-exec-10] (145051038578249728) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":145051038578249728,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 08:59:36.435  INFO 24660 --- [http-nio-8080-exec-2] (145051054172672000) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33888116932735","latitude":"30.319835998865493"}
+2024-09-07 08:59:36.435  INFO 24660 --- [http-nio-8080-exec-2] (145051054172672000) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145051054172672000,"message":"Full authentication is required to access this resource"}
+2024-09-07 08:59:36.444  INFO 24660 --- [http-nio-8080-exec-4] (145051054210420736) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33888116932735","latitude":"30.319835998865493"}
+2024-09-07 08:59:36.575  INFO 24660 --- [http-nio-8080-exec-4] (145051054210420736) com.example.filter.RequestLogFilter      : 请求处理耗时: 131ms | 响应结果: {"id":145051054210420736,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:04:07.218  INFO 24660 --- [http-nio-8080-exec-6] (145052189918892032) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:04:07.219  INFO 24660 --- [http-nio-8080-exec-6] (145052189918892032) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145052189918892032,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:04:07.224  INFO 24660 --- [http-nio-8080-exec-8] (145052189944057856) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:04:07.228  INFO 24660 --- [http-nio-8080-exec-8] (145052189944057856) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":145052189944057856,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:04:14.695  INFO 24660 --- [http-nio-8080-exec-9] (145052221279703040) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33889139164037","latitude":"30.3197584905427"}
+2024-09-07 09:04:14.696  INFO 24660 --- [http-nio-8080-exec-9] (145052221279703040) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145052221279703040,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:04:14.702  INFO 24660 --- [http-nio-8080-exec-10] (145052221309063168) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33889139164037","latitude":"30.3197584905427"}
+2024-09-07 09:04:15.079  INFO 24660 --- [http-nio-8080-exec-10] (145052221309063168) com.example.filter.RequestLogFilter      : 请求处理耗时: 377ms | 响应结果: {"id":145052221309063168,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:04:48.492  INFO 24660 --- [http-nio-8080-exec-1] (145052363034595328) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:04:48.493  INFO 24660 --- [http-nio-8080-exec-1] (145052363034595328) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145052363034595328,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:04:48.497  INFO 24660 --- [http-nio-8080-exec-2] (145052363055566848) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:04:48.499  INFO 24660 --- [http-nio-8080-exec-2] (145052363055566848) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"id":145052363055566848,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:04:52.277  INFO 24660 --- [http-nio-8080-exec-3] (145052378910035968) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33887978757602","latitude":"30.31979029216712"}
+2024-09-07 09:04:52.277  INFO 24660 --- [http-nio-8080-exec-3] (145052378910035968) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145052378910035968,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:04:52.282  INFO 24660 --- [http-nio-8080-exec-5] (145052378931007488) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33887978757602","latitude":"30.31979029216712"}
+2024-09-07 09:04:52.407  INFO 24660 --- [http-nio-8080-exec-5] (145052378931007488) com.example.filter.RequestLogFilter      : 请求处理耗时: 125ms | 响应结果: {"id":145052378931007488,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:05:28.433  INFO 24660 --- [http-nio-8080-exec-6] (145052530559291392) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:05:28.433  INFO 24660 --- [http-nio-8080-exec-6] (145052530559291392) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145052530559291392,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:05:28.437  INFO 24660 --- [http-nio-8080-exec-8] (145052530576068608) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:05:28.439  INFO 24660 --- [http-nio-8080-exec-8] (145052530576068608) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"id":145052530576068608,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:05:31.902  INFO 24660 --- [http-nio-8080-exec-9] (145052545109331968) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33887978757602","latitude":"30.31979029216712"}
+2024-09-07 09:05:31.902  INFO 24660 --- [http-nio-8080-exec-9] (145052545109331968) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145052545109331968,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:05:31.909  INFO 24660 --- [http-nio-8080-exec-10] (145052545138692096) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33887978757602","latitude":"30.31979029216712"}
+2024-09-07 09:05:32.039  INFO 24660 --- [http-nio-8080-exec-10] (145052545138692096) com.example.filter.RequestLogFilter      : 请求处理耗时: 130ms | 响应结果: {"id":145052545138692096,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:06:35.663  INFO 24660 --- [http-nio-8080-exec-4] (145052812542349312) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:06:35.664  INFO 24660 --- [http-nio-8080-exec-4] (145052812542349312) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145052812542349312,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:06:35.668  INFO 24660 --- [http-nio-8080-exec-3] (145052812563320832) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:06:35.671  INFO 24660 --- [http-nio-8080-exec-3] (145052812563320832) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":145052812563320832,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:06:39.506  INFO 24660 --- [http-nio-8080-exec-6] (145052828661059584) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33887469064727","latitude":"30.319812168983347"}
+2024-09-07 09:06:39.506  INFO 24660 --- [http-nio-8080-exec-6] (145052828661059584) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145052828661059584,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:06:39.512  INFO 24660 --- [http-nio-8080-exec-8] (145052828686225408) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33887469064727","latitude":"30.319812168983347"}
+2024-09-07 09:06:39.694  INFO 24660 --- [http-nio-8080-exec-8] (145052828686225408) com.example.filter.RequestLogFilter      : 请求处理耗时: 182ms | 响应结果: {"id":145052828686225408,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:18:10.685  INFO 24660 --- [http-nio-8080-exec-10] (145055727675904000) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:18:10.686  INFO 24660 --- [http-nio-8080-exec-10] (145055727675904000) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145055727675904000,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:18:10.690  INFO 24660 --- [http-nio-8080-exec-1] (145055727696875520) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:18:10.693  INFO 24660 --- [http-nio-8080-exec-1] (145055727696875520) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":145055727696875520,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:27:46.063  INFO 24660 --- [http-nio-8080-exec-5] (145058140986150912) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:27:46.064  INFO 24660 --- [http-nio-8080-exec-5] (145058140986150912) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145058140986150912,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:27:46.070  INFO 24660 --- [http-nio-8080-exec-6] (145058141015511040) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:27:46.074  INFO 24660 --- [http-nio-8080-exec-6] (145058141015511040) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":145058141015511040,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:28:00.675  INFO 24660 --- [http-nio-8080-exec-7] (145058202273320960) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33889520278677","latitude":"30.31980040683292"}
+2024-09-07 09:28:00.676  INFO 24660 --- [http-nio-8080-exec-7] (145058202273320960) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145058202273320960,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:28:00.679  INFO 24660 --- [http-nio-8080-exec-9] (145058202290098176) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33889520278677","latitude":"30.31980040683292"}
+2024-09-07 09:28:00.939  INFO 24660 --- [http-nio-8080-exec-9] (145058202290098176) com.example.filter.RequestLogFilter      : 请求处理耗时: 260ms | 响应结果: {"id":145058202290098176,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:33:11.570  INFO 24660 --- [http-nio-8080-exec-2] (145059506261463040) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:33:11.571  INFO 24660 --- [http-nio-8080-exec-2] (145059506261463040) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145059506261463040,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:33:11.575  INFO 24660 --- [http-nio-8080-exec-3] (145059506282434560) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:33:11.578  INFO 24660 --- [http-nio-8080-exec-3] (145059506282434560) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":145059506282434560,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:33:11.644  INFO 24660 --- [http-nio-8080-exec-5] (145059506571841536) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.3388890510349","latitude":"30.31983442705125"}
+2024-09-07 09:33:11.644  INFO 24660 --- [http-nio-8080-exec-5] (145059506571841536) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145059506571841536,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:33:11.650  INFO 24660 --- [http-nio-8080-exec-6] (145059506597007360) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.3388890510349","latitude":"30.31983442705125"}
+2024-09-07 09:33:11.859  INFO 24660 --- [http-nio-8080-exec-6] (145059506597007360) com.example.filter.RequestLogFilter      : 请求处理耗时: 209ms | 响应结果: {"id":145059506597007360,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:36:00.907  INFO 24660 --- [http-nio-8080-exec-9] (145060216512319488) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:36:00.907  INFO 24660 --- [http-nio-8080-exec-9] (145060216512319488) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145060216512319488,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:36:00.911  INFO 24660 --- [http-nio-8080-exec-10] (145060216529096704) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:36:00.914  INFO 24660 --- [http-nio-8080-exec-10] (145060216529096704) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":145060216529096704,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:39:03.757  INFO 24660 --- [http-nio-8080-exec-4] (145060983440805888) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33889437254834","latitude":"30.319760494086935"}
+2024-09-07 09:39:03.757  INFO 24660 --- [http-nio-8080-exec-4] (145060983440805888) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145060983440805888,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:39:03.762  INFO 24660 --- [http-nio-8080-exec-5] (145060983461777408) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33889437254834","latitude":"30.319760494086935"}
+2024-09-07 09:39:04.004  INFO 24660 --- [http-nio-8080-exec-5] (145060983461777408) com.example.filter.RequestLogFilter      : 请求处理耗时: 242ms | 响应结果: {"id":145060983461777408,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:39:07.976  INFO 24660 --- [http-nio-8080-exec-6] (145061001136574464) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:39:07.976  INFO 24660 --- [http-nio-8080-exec-6] (145061001136574464) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":145061001136574464,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:39:07.982  INFO 24660 --- [http-nio-8080-exec-7] (145061001161740288) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:39:07.986  INFO 24660 --- [http-nio-8080-exec-7] (145061001161740288) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":145061001161740288,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:39:08.050  INFO 24660 --- [http-nio-8080-exec-9] (145061001446952960) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33889437254834","latitude":"30.319760494086935"}
+2024-09-07 09:39:08.094  INFO 24660 --- [http-nio-8080-exec-9] (145061001446952960) com.example.filter.RequestLogFilter      : 请求处理耗时: 44ms | 响应结果: {"id":145061001446952960,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:40:39.050  INFO 24660 --- [http-nio-8080-exec-3] (145061383128616960) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-07 09:40:39.051  INFO 24660 --- [http-nio-8080-exec-3] (145061383128616960) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145061383128616960,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:40:39.081  INFO 24660 --- [http-nio-8080-exec-2] (145061383258640384) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-07 09:40:39.084  INFO 24660 --- [http-nio-8080-exec-2] (145061383258640384) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":145061383258640384,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-07 09:42:58.507  INFO 24660 --- [http-nio-8080-exec-7] (145061968053669888) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33888710575494","latitude":"30.319813746317887"}
+2024-09-07 09:42:58.508  INFO 24660 --- [http-nio-8080-exec-7] (145061968053669888) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145061968053669888,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:42:58.508  INFO 24660 --- [http-nio-8080-exec-8] (145061968057864192) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"longitude":"120.33888710575494","latitude":"30.319813746317887"}
+2024-09-07 09:42:58.509  INFO 24660 --- [http-nio-8080-exec-8] (145061968057864192) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":145061968057864192,"message":"Full authentication is required to access this resource"}
+2024-09-07 09:42:58.515  INFO 24660 --- [http-nio-8080-exec-9] (145061968087224320) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33888710575494","latitude":"30.319813746317887"}
+2024-09-07 09:42:58.713  INFO 24660 --- [http-nio-8080-exec-9] (145061968087224320) com.example.filter.RequestLogFilter      : 请求处理耗时: 198ms | 响应结果: {"id":145061968087224320,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:42:58.717  INFO 24660 --- [http-nio-8080-exec-1] (145061968930279424) com.example.filter.RequestLogFilter      : 请求URL: "/api/forum/weather" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {"longitude":"120.33888710575494","latitude":"30.319813746317887"}
+2024-09-07 09:42:58.765  INFO 24660 --- [http-nio-8080-exec-1] (145061968930279424) com.example.filter.RequestLogFilter      : 请求处理耗时: 49ms | 响应结果: {"id":145061968930279424,"code":200,"data":{"location":{"name":"钱塘","id":"101210111","lat":"30.32304","lon":"120.49394","adm2":"杭州","adm1":"浙江省","country":"中国","tz":"Asia/Shanghai","utcOffset":"+08:00","isDst":"0","type":"city","rank":"25","fxLink":"https://www.qweather.com/weather/qiantang-101210111.html"},"now":{"obsTime":"2024-09-07T08:50+08:00","temp":"31","feelsLike":"33","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"3","windSpeed":"13","humidity":"65","precip":"0.0","pressure":"1008","vis":"8","cloud":"0","dew":"25"},"hourly":[{"fxTime":"2024-09-07T09:00+08:00","temp":"31","icon":"100","text":"晴","wind360":"99","windDir":"东风","windScale":"1-3","windSpeed":"14","humidity":"74","pop":"7","precip":"0.0","pressure":"1010","cloud":"11","dew":"24"},{"fxTime":"2024-09-07T10:00+08:00","temp":"32","icon":"100","text":"晴","wind360":"90","windDir":"东风","windScale":"1-3","windSpeed":"16","humidity":"66","pop":"7","precip":"0.0","pressure":"1010","cloud":"21","dew":"24"},{"fxTime":"2024-09-07T11:00+08:00","temp":"33","icon":"100","text":"晴","wind360":"84","windDir":"东风","windScale":"1-3","windSpeed":"18","humidity":"59","pop":"7","precip":"0.0","pressure":"1010","cloud":"31","dew":"23"},{"fxTime":"2024-09-07T12:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"84","windDir":"东风","windScale":"3-4","windSpeed":"20","humidity":"55","pop":"7","precip":"0.0","pressure":"1011","cloud":"38","dew":"23"},{"fxTime":"2024-09-07T13:00+08:00","temp":"34","icon":"101","text":"多云","wind360":"86","windDir":"东风","windScale":"3-4","windSpeed":"22","humidity":"53","pop":"7","precip":"0.0","pressure":"1011","cloud":"45","dew":"23"}]},"message":"请求成功"}
+2024-09-07 09:47:36.156  INFO 24660 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-09-07 09:47:36.645  INFO 24660 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-09-07 09:47:36.678  INFO 24660 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-07 09:47:36.682  INFO 24660 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

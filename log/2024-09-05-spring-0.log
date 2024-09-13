@@ -1,0 +1,462 @@
+2024-09-05 09:00:50.253  INFO 5044 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 21 with PID 5044 (E:\coding\bilibili\javaClass\campus-bbs\my-project-backend\target\classes started by yfh13 in E:\coding\bilibili\javaClass\campus-bbs)
+2024-09-05 09:00:50.255  INFO 5044 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-09-05 09:00:51.061  INFO 5044 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-05 09:00:51.079  INFO 5044 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-05 09:00:51.111  INFO 5044 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-09-05 09:00:51.782  INFO 5044 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-05 09:00:51.792  INFO 5044 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-05 09:00:51.792  INFO 5044 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-05 09:00:51.858  INFO 5044 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-05 09:00:51.858  INFO 5044 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1566 ms
+2024-09-05 09:00:52.772  INFO 5044 --- [main] (system) com.example.config.MinioConfiguration    : Init minio client
+2024-09-05 09:00:53.065  INFO 5044 --- [main] (system) r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name accountServiceImpl
+2024-09-05 09:00:53.663  INFO 5044 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-09-05 09:00:53.665  INFO 5044 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-09-05 09:00:53.707  INFO 5044 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1cdd31a4:0/SimpleConnection@4a65c40 [delegate=amqp://guest@127.0.0.1:5672/, localPort=3373]
+2024-09-05 09:00:53.743  INFO 5044 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 3.983 seconds (process running for 13.523)
+2024-09-05 09:01:05.295  INFO 5044 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-05 09:01:05.295  INFO 5044 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-05 09:01:05.297  INFO 5044 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-09-05 09:01:05.639  INFO 5044 --- [http-nio-8080-exec-1] (144326652577583104) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:01:05.767  INFO 5044 --- [http-nio-8080-exec-1] (144326652577583104) com.example.filter.RequestLogFilter      : 请求处理耗时: 131ms | 响应结果: {"code":401,"data":null,"id":144326652577583104,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:01:05.819  INFO 5044 --- [http-nio-8080-exec-4] (144326653345140736) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:01:05.916  INFO 5044 --- [http-nio-8080-exec-4] (144326653345140736) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-05 09:01:06.231  INFO 5044 --- [http-nio-8080-exec-4] (144326653345140736) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63b7e98a
+2024-09-05 09:01:06.232  INFO 5044 --- [http-nio-8080-exec-4] (144326653345140736) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-05 09:01:06.328  INFO 5044 --- [http-nio-8080-exec-4] (144326653345140736) com.example.filter.RequestLogFilter      : 请求处理耗时: 509ms | 响应结果: {"id":144326653345140736,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:01:06.525 ERROR 5044 --- [http-nio-8080-exec-2] (system) o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:9000
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at io.minio.S3Base.execute(S3Base.java:508)
+	at io.minio.S3Base.getRegion(S3Base.java:661)
+	at io.minio.S3Base.execute(S3Base.java:445)
+	at io.minio.S3Base.executeGet(S3Base.java:685)
+	at io.minio.MinioClient.getObject(MinioClient.java:248)
+	at com.example.service.impl.ImageServiceImpl.fetchImageFromMinio(ImageServiceImpl.java:63)
+	at com.example.controller.ObjectController.fetchImage(ObjectController.java:37)
+	at com.example.controller.ObjectController.imageFetch(ObjectController.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.filter.RequestLogFilter.doFilterInternal(RequestLogFilter.java:37)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.filter.FlowLimitingFilter.doFilter(FlowLimitingFilter.java:51)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.filter.CorsFilter.doFilter(CorsFilter.java:34)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+	Suppressed: java.net.ConnectException: Failed to connect to localhost/127.0.0.1:9000
+		... 139 common frames omitted
+	Caused by: java.net.ConnectException: Connection refused: no further information
+		at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+		at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+		at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+		... 138 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+	... 138 common frames omitted
+
+2024-09-05 09:01:08.591  INFO 5044 --- [http-nio-8080-exec-3] (144326664971751424) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/privacy" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:01:08.592  INFO 5044 --- [http-nio-8080-exec-3] (144326664971751424) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144326664971751424,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:01:08.600  INFO 5044 --- [http-nio-8080-exec-5] (144326665009500160) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/privacy" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:01:08.609  INFO 5044 --- [http-nio-8080-exec-5] (144326665009500160) com.example.filter.RequestLogFilter      : 请求处理耗时: 9ms | 响应结果: {"id":144326665009500160,"code":200,"data":{"phone":true,"email":true,"wx":false,"qq":false,"gender":true},"message":"请求成功"}
+2024-09-05 09:01:09.458  INFO 5044 --- [http-nio-8080-exec-6] (144326668608212992) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:01:09.458  INFO 5044 --- [http-nio-8080-exec-6] (144326668608212992) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144326668608212992,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:01:09.463  INFO 5044 --- [http-nio-8080-exec-7] (144326668629184512) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:01:09.472  INFO 5044 --- [http-nio-8080-exec-7] (144326668629184512) com.example.filter.RequestLogFilter      : 请求处理耗时: 9ms | 响应结果: {"id":144326668629184512,"code":200,"data":{"gender":0,"phone":"18268640252","qq":"3127149213","wx":"18268640252","desc":"你好，我是杭州电子科技大学数字媒体技术专业的大三学生叶丰华，我非常喜欢敲代码，非常高兴可以认识你们~"},"message":"请求成功"}
+2024-09-05 09:01:09.489 ERROR 5044 --- [http-nio-8080-exec-8] (system) o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:9000
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at io.minio.S3Base.execute(S3Base.java:508)
+	at io.minio.S3Base.getRegion(S3Base.java:661)
+	at io.minio.S3Base.execute(S3Base.java:445)
+	at io.minio.S3Base.executeGet(S3Base.java:685)
+	at io.minio.MinioClient.getObject(MinioClient.java:248)
+	at com.example.service.impl.ImageServiceImpl.fetchImageFromMinio(ImageServiceImpl.java:63)
+	at com.example.controller.ObjectController.fetchImage(ObjectController.java:37)
+	at com.example.controller.ObjectController.imageFetch(ObjectController.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.filter.RequestLogFilter.doFilterInternal(RequestLogFilter.java:37)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.filter.FlowLimitingFilter.doFilter(FlowLimitingFilter.java:51)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.filter.CorsFilter.doFilter(CorsFilter.java:34)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+	Suppressed: java.net.ConnectException: Failed to connect to localhost/127.0.0.1:9000
+		... 139 common frames omitted
+	Caused by: java.net.ConnectException: Connection refused: no further information
+		at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+		at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+		at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+		... 138 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+	... 138 common frames omitted
+
+2024-09-05 09:01:57.343  INFO 5044 --- [http-nio-8080-exec-9] (144326869452460032) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:01:57.345  INFO 5044 --- [http-nio-8080-exec-9] (144326869452460032) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"code":401,"data":null,"id":144326869452460032,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:01:57.351  INFO 5044 --- [http-nio-8080-exec-10] (144326869486014464) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:01:57.355  INFO 5044 --- [http-nio-8080-exec-10] (144326869486014464) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":144326869486014464,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:01:57.381  INFO 5044 --- [http-nio-8080-exec-1] (144326869611843584) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:01:57.382  INFO 5044 --- [http-nio-8080-exec-1] (144326869611843584) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144326869611843584,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:01:57.387  INFO 5044 --- [http-nio-8080-exec-4] (144326869637009408) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:01:57.390  INFO 5044 --- [http-nio-8080-exec-4] (144326869637009408) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144326869637009408,"code":200,"data":{"gender":0,"phone":"18268640252","qq":"3127149213","wx":"18268640252","desc":"你好，我是杭州电子科技大学数字媒体技术专业的大三学生叶丰华，我非常喜欢敲代码，非常高兴可以认识你们~"},"message":"请求成功"}
+2024-09-05 09:03:24.323  INFO 5044 --- [http-nio-8080-exec-6] (144327234273021952) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:03:24.324  INFO 5044 --- [http-nio-8080-exec-6] (144327234273021952) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144327234273021952,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:03:24.333  INFO 5044 --- [http-nio-8080-exec-7] (144327234314964992) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:03:24.336  INFO 5044 --- [http-nio-8080-exec-7] (144327234314964992) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144327234314964992,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:03:24.412  INFO 5044 --- [http-nio-8080-exec-9] (144327234646315008) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:03:24.412  INFO 5044 --- [http-nio-8080-exec-9] (144327234646315008) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144327234646315008,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:03:24.417  INFO 5044 --- [http-nio-8080-exec-10] (144327234667286528) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:03:24.420  INFO 5044 --- [http-nio-8080-exec-10] (144327234667286528) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144327234667286528,"code":200,"data":{"gender":0,"phone":"18268640252","qq":"3127149213","wx":"18268640252","desc":"你好，我是杭州电子科技大学数字媒体技术专业的大三学生叶丰华，我非常喜欢敲代码，非常高兴可以认识你们~"},"message":"请求成功"}
+2024-09-05 09:03:48.357  INFO 5044 --- [http-nio-8080-exec-1] (144327335078924288) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:03:48.357  INFO 5044 --- [http-nio-8080-exec-1] (144327335078924288) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144327335078924288,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:03:48.364  INFO 5044 --- [http-nio-8080-exec-4] (144327335108284416) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:03:48.369  INFO 5044 --- [http-nio-8080-exec-4] (144327335108284416) com.example.filter.RequestLogFilter      : 请求处理耗时: 5ms | 响应结果: {"id":144327335108284416,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:03:48.450  INFO 5044 --- [http-nio-8080-exec-3] (144327335468994560) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:03:48.451  INFO 5044 --- [http-nio-8080-exec-3] (144327335468994560) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144327335468994560,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:03:48.456  INFO 5044 --- [http-nio-8080-exec-5] (144327335494160384) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:03:48.459  INFO 5044 --- [http-nio-8080-exec-5] (144327335494160384) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144327335494160384,"code":200,"data":{"gender":0,"phone":"18268640252","qq":"3127149213","wx":"18268640252","desc":"你好，我是杭州电子科技大学数字媒体技术专业的大三学生叶丰华，我非常喜欢敲代码，非常高兴可以认识你们~"},"message":"请求成功"}
+2024-09-05 09:05:01.664  INFO 5044 --- [http-nio-8080-exec-8] (144327642550767616) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:05:01.664  INFO 5044 --- [http-nio-8080-exec-8] (144327642550767616) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144327642550767616,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:05:01.679  INFO 5044 --- [http-nio-8080-exec-9] (144327642613682176) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:05:01.683  INFO 5044 --- [http-nio-8080-exec-9] (144327642613682176) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":144327642613682176,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:05:01.846  INFO 5044 --- [http-nio-8080-exec-10] (144327643314130944) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:05:01.846  INFO 5044 --- [http-nio-8080-exec-10] (144327643314130944) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144327643314130944,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:05:01.858  INFO 5044 --- [http-nio-8080-exec-4] (144327643364462592) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:05:01.862  INFO 5044 --- [http-nio-8080-exec-4] (144327643364462592) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":144327643364462592,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:05:01.942  INFO 5044 --- [http-nio-8080-exec-2] (144327643716784128) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:05:01.942  INFO 5044 --- [http-nio-8080-exec-2] (144327643716784128) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144327643716784128,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:05:01.947  INFO 5044 --- [http-nio-8080-exec-3] (144327643737755648) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:05:01.950  INFO 5044 --- [http-nio-8080-exec-3] (144327643737755648) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144327643737755648,"code":200,"data":{"gender":0,"phone":"18268640252","qq":"3127149213","wx":"18268640252","desc":"你好，我是杭州电子科技大学数字媒体技术专业的大三学生叶丰华，我非常喜欢敲代码，非常高兴可以认识你们~"},"message":"请求成功"}
+2024-09-05 09:05:05.952  INFO 5044 --- [http-nio-8080-exec-6] (144327660535943168) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:05:05.955  INFO 5044 --- [http-nio-8080-exec-6] (144327660535943168) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144327660535943168,"code":200,"data":{"gender":0,"phone":"18268640252","qq":"3127149213","wx":"18268640252","desc":"你好，我是杭州电子科技大学数字媒体技术专业的大三学生叶丰华，我非常喜欢敲代码，非常高兴可以认识你们~"},"message":"请求成功"}
+2024-09-05 09:05:06.771  INFO 5044 --- [http-nio-8080-exec-8] (144327663971078144) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/privacy" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:05:06.771  INFO 5044 --- [http-nio-8080-exec-8] (144327663971078144) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144327663971078144,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:05:06.778  INFO 5044 --- [http-nio-8080-exec-9] (144327664000438272) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/privacy" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:05:06.781  INFO 5044 --- [http-nio-8080-exec-9] (144327664000438272) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144327664000438272,"code":200,"data":{"phone":true,"email":true,"wx":false,"qq":false,"gender":true},"message":"请求成功"}
+2024-09-05 09:12:20.772  INFO 5044 --- [http-nio-8080-exec-7] (144329484303208448) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:12:20.773  INFO 5044 --- [http-nio-8080-exec-7] (144329484303208448) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144329484303208448,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:12:20.778  INFO 5044 --- [http-nio-8080-exec-8] (144329484328374272) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/details" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:12:20.782  INFO 5044 --- [http-nio-8080-exec-8] (144329484328374272) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":144329484328374272,"code":200,"data":{"gender":0,"phone":"18268640252","qq":"3127149213","wx":"18268640252","desc":"你好，我是杭州电子科技大学数字媒体技术专业的大三学生叶丰华，我非常喜欢敲代码，非常高兴可以认识你们~"},"message":"请求成功"}
+2024-09-05 09:24:28.356  INFO 5044 --- [http-nio-8080-exec-4] (144332536007495680) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:24:28.356  INFO 5044 --- [http-nio-8080-exec-4] (144332536007495680) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144332536007495680,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:24:28.361  INFO 5044 --- [http-nio-8080-exec-2] (144332536032661504) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:24:28.366  INFO 5044 --- [http-nio-8080-exec-2] (144332536032661504) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":144332536032661504,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:25:05.385  INFO 5044 --- [http-nio-8080-exec-5] (144332691322572800) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:25:05.386  INFO 5044 --- [http-nio-8080-exec-5] (144332691322572800) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144332691322572800,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:25:05.390  INFO 5044 --- [http-nio-8080-exec-6] (144332691343544320) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:25:05.392  INFO 5044 --- [http-nio-8080-exec-6] (144332691343544320) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"id":144332691343544320,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:26:36.884  INFO 5044 --- [http-nio-8080-exec-1] (144333075097194496) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:26:36.884  INFO 5044 --- [http-nio-8080-exec-1] (144333075097194496) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144333075097194496,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:26:36.889  INFO 5044 --- [http-nio-8080-exec-10] (144333075118166016) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:26:36.892  INFO 5044 --- [http-nio-8080-exec-10] (144333075118166016) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144333075118166016,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:27:09.327  INFO 5044 --- [http-nio-8080-exec-2] (144333211172999168) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:27:09.327  INFO 5044 --- [http-nio-8080-exec-2] (144333211172999168) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144333211172999168,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:27:09.336  INFO 5044 --- [http-nio-8080-exec-3] (144333211210747904) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:27:09.339  INFO 5044 --- [http-nio-8080-exec-3] (144333211210747904) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144333211210747904,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:28:16.351  INFO 5044 --- [http-nio-8080-exec-8] (144333492292030464) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:28:16.351  INFO 5044 --- [http-nio-8080-exec-8] (144333492292030464) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144333492292030464,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:28:16.356  INFO 5044 --- [http-nio-8080-exec-9] (144333492313001984) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:28:16.358  INFO 5044 --- [http-nio-8080-exec-9] (144333492313001984) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"id":144333492313001984,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:29:17.423  INFO 5044 --- [http-nio-8080-exec-2] (144333748446564352) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:29:17.423  INFO 5044 --- [http-nio-8080-exec-2] (144333748446564352) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144333748446564352,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:29:17.429  INFO 5044 --- [http-nio-8080-exec-3] (144333748471730176) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:29:17.431  INFO 5044 --- [http-nio-8080-exec-3] (144333748471730176) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"id":144333748471730176,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:29:26.142  INFO 5044 --- [http-nio-8080-exec-7] (144333785016700928) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:29:26.143  INFO 5044 --- [http-nio-8080-exec-7] (144333785016700928) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144333785016700928,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:29:26.152  INFO 5044 --- [http-nio-8080-exec-6] (144333785058643968) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:29:26.155  INFO 5044 --- [http-nio-8080-exec-6] (144333785058643968) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144333785058643968,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:29:44.744  INFO 5044 --- [http-nio-8080-exec-9] (144333863039143936) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:29:44.744  INFO 5044 --- [http-nio-8080-exec-9] (144333863039143936) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144333863039143936,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:29:44.750  INFO 5044 --- [http-nio-8080-exec-1] (144333863064309760) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:29:44.753  INFO 5044 --- [http-nio-8080-exec-1] (144333863064309760) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144333863064309760,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:30:27.899  INFO 5044 --- [http-nio-8080-exec-10] (144334044044333056) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:30:27.899  INFO 5044 --- [http-nio-8080-exec-10] (144334044044333056) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144334044044333056,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:30:27.908  INFO 5044 --- [http-nio-8080-exec-2] (144334044082081792) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:30:27.910  INFO 5044 --- [http-nio-8080-exec-2] (144334044082081792) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: {"id":144334044082081792,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:30:58.457  INFO 5044 --- [http-nio-8080-exec-5] (144334172213874688) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:30:58.457  INFO 5044 --- [http-nio-8080-exec-5] (144334172213874688) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: {"code":401,"data":null,"id":144334172213874688,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:30:58.463  INFO 5044 --- [http-nio-8080-exec-7] (144334172239040512) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:30:58.466  INFO 5044 --- [http-nio-8080-exec-7] (144334172239040512) com.example.filter.RequestLogFilter      : 请求处理耗时: 3ms | 响应结果: {"id":144334172239040512,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:51:17.245  INFO 5044 --- [http-nio-8080-exec-1] (144339284181258240) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:51:17.246  INFO 5044 --- [http-nio-8080-exec-1] (144339284181258240) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144339284181258240,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:51:17.252  INFO 5044 --- [http-nio-8080-exec-4] (144339284210618368) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:51:17.256  INFO 5044 --- [http-nio-8080-exec-4] (144339284210618368) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: {"id":144339284210618368,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 09:51:45.534  INFO 5044 --- [http-nio-8080-exec-2] (144339402833924096) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-09-05 09:51:45.535  INFO 5044 --- [http-nio-8080-exec-2] (144339402833924096) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: {"code":401,"data":null,"id":144339402833924096,"message":"Full authentication is required to access this resource"}
+2024-09-05 09:51:45.582  INFO 5044 --- [http-nio-8080-exec-3] (144339403035250688) com.example.filter.RequestLogFilter      : 请求URL: "/api/user/info" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 叶丰华 (UID: 1) | 角色: [ROLE_user] | 请求参数列表: {}
+2024-09-05 09:51:45.610  INFO 5044 --- [http-nio-8080-exec-3] (144339403035250688) com.example.filter.RequestLogFilter      : 请求处理耗时: 28ms | 响应结果: {"id":144339403035250688,"code":200,"data":{"username":"叶丰华","email":"yfh1347182719@outlook.com","role":"user","avatar":"/avatar/e89bf5a03a08482c880b30edcca4b77e","registerTime":"2024-08-11T12:42:24.000+00:00"},"message":"请求成功"}
+2024-09-05 10:00:38.786  INFO 5044 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-09-05 10:00:39.488  INFO 5044 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-09-05 10:00:39.538  INFO 5044 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-05 10:00:39.543  INFO 5044 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
