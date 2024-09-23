@@ -2,11 +2,9 @@ package com.example.controller;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.example.entity.RestBean;
+import com.example.entity.dto.Interact;
 import com.example.entity.vo.request.TopicCreateVO;
-import com.example.entity.vo.response.TopicPreviewVO;
-import com.example.entity.vo.response.TopicTopVO;
-import com.example.entity.vo.response.TopicTypeVO;
-import com.example.entity.vo.response.WeatherVO;
+import com.example.entity.vo.response.*;
 import com.example.service.TopicService;
 import com.example.service.WeatherService;
 import com.example.utils.Const;
@@ -14,8 +12,10 @@ import com.example.utils.ControllerUtils;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Pattern;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -57,5 +57,19 @@ public class ForumController {
     @GetMapping("/top-topic")
     public RestBean<List<TopicTopVO>> topTopic(){
         return RestBean.success(topicService.listTopicTop());
+    }
+
+    @GetMapping("/topic")
+    public RestBean<TopicDetailVO> topic(@RequestParam @Min(0) int tid){
+        return RestBean.success(topicService.getTopic(tid));
+    }
+
+    @GetMapping("/interact")
+    public RestBean<Void> interact(@RequestParam @Min(0) int tid,
+                                   @RequestParam @Pattern(regexp = "(like|collect)") String type,
+                                   @RequestParam boolean state,
+                                   @RequestAttribute(Const.ATTR_USER_ID) int id){
+        topicService.interact(new Interact(tid,id,new Date(),type),state);
+        return RestBean.success();
     }
 }

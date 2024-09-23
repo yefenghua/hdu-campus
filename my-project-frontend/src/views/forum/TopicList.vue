@@ -1,7 +1,7 @@
 <script setup>
 import LightCard from "@/components/LightCard.vue";
 import {
-    Calendar,
+    Calendar, CircleCheck,
     Clock,
     CollectionTag,
     Compass,
@@ -10,7 +10,7 @@ import {
     EditPen,
     Link,
     Microphone,
-    Picture
+    Picture, Star
 } from "@element-plus/icons-vue";
 import Weather from "@/components/Weather.vue";
 import {computed, reactive, ref, watch} from "vue";
@@ -20,6 +20,8 @@ import TopicEditor from "@/components/TopicEditor.vue";
 import {useStore} from "@/store";
 import axios from "axios";
 import ColorDot from "@/components/ColorDot.vue";
+import router from "@/router";
+import TopicTag from "@/components/TopicTag.vue";
 
 const store=useStore()
 
@@ -48,18 +50,11 @@ watch(()=>topics.type,()=> {
     resetList()
 },{immediate:true})
 
-get('/api/forum/types',data=> {
-    const array=[]
-    array.push({name:'全部',id:0,color:'linear-gradient(45deg,white,red,orange,gold,green,blue)'})
-    data.forEach(d=>array.push(d))
-    store.forum.types = array
-})
+
 get("/api/forum/top-topic",data=> {
     topics.top = data
-    console.log(data)
 })
 function updateList(){
-    console.log(topics.page)
     if (topics.end) return;
     get(`/api/forum/list-topic?page=${topics.page}&type=${topics.type}`, data=> {
         if (data){
@@ -121,7 +116,7 @@ navigator.geolocation.getCurrentPosition(position => {
             </div>
         </light-card>
         <light-card style="margin-top: 10px;display: flex;flex-direction: column;gap: 10px">
-            <div v-for="item in topics.top" class="top-topic">
+            <div v-for="item in topics.top" class="top-topic" @click="router.push(`/index/topic-detail/${item.id}`)">
                 <el-tag type="danger" size="small">置顶</el-tag>
                 <div>{{item.title}}</div>
                 <div>{{new Date(item.time).toLocaleString()}}</div>
@@ -136,7 +131,7 @@ navigator.geolocation.getCurrentPosition(position => {
         <transition name="el-fade-in" mode="out-in">
             <div v-if="topics.list.length">
                 <div style="margin-top: 10px;display: flex;flex-direction: column;gap: 10px" v-infinite-scroll="updateList">
-                    <light-card v-for="item in topics.list" class="topic-card">
+                    <light-card v-for="item in topics.list" class="topic-card" @click="router.push('/index/topic-detail/'+item.id)">
                         <div>
                             <div style="display: flex">
                                 <div>
@@ -154,13 +149,7 @@ navigator.geolocation.getCurrentPosition(position => {
                             </div>
                         </div>
                         <div>
-                            <div class="topic-type" :style="{
-                        color: store.findTypeByID(item.type)?.color+'EE',
-                        borderColor: store.findTypeByID(item.type)?.color+'77',
-                        backgroundColor: store.findTypeByID(item.type)?.color+'30',
-                    }">
-                                {{store.findTypeByID(item.type)?.name}}
-                            </div>
+                            <topic-tag :type="item.type"/>
                             <span style="font-weight: bold;margin-left: 7px;">
                         {{item.title}}
                     </span>
@@ -170,6 +159,14 @@ navigator.geolocation.getCurrentPosition(position => {
                             <el-image class="topic-image" v-for="img in item.images" :src="img">
 
                             </el-image>
+                            <div style="display: flex;gap: 20px;font-size: 13px;margin-top: 10px;opacity: 0.8">
+                                <div>
+                                    <el-icon style="vertical-align: middle"><CircleCheck/></el-icon> {{item.like}}点赞
+                                </div>
+                                <div>
+                                    <el-icon style="vertical-align: middle"><Star/></el-icon> {{item.collect}}收藏
+                                </div>
+                            </div>
                         </div>
                     </light-card>
                 </div>
@@ -305,16 +302,6 @@ navigator.geolocation.getCurrentPosition(position => {
         height: 100%;
         max-height: 110px;
         border-radius: 5px;
-    }
-
-    .topic-type{
-        display: inline-block;
-        border: solid 0.5px grey;
-        border-radius: 5px;
-        font-size: 12px;
-        padding: 0 5px;
-        height: 18px;
-        translate: 0 -1px;
     }
 }
 

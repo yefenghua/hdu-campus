@@ -5,14 +5,12 @@ import com.alibaba.fastjson2.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.entity.dto.Topic;
-import com.example.entity.dto.TopicType;
+import com.example.entity.dto.*;
 import com.example.entity.vo.request.TopicCreateVO;
+import com.example.entity.vo.response.TopicDetailVO;
 import com.example.entity.vo.response.TopicPreviewVO;
 import com.example.entity.vo.response.TopicTopVO;
-import com.example.mapper.AccountMapper;
-import com.example.mapper.TopicMapper;
-import com.example.mapper.TopicTypeMapper;
+import com.example.mapper.*;
 import com.example.service.TopicService;
 import com.example.utils.CacheUtils;
 import com.example.utils.Const;
@@ -21,9 +19,13 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,6 +43,15 @@ public class TopicServiceImpl extends ServiceImpl<TopicMapper, Topic> implements
 
     @Resource
     private AccountMapper accountMapper;
+
+    @Resource
+    AccountDetailsMapper detailsMapper;
+
+    @Resource
+    AccountPrivacyMapper privacyMapper;
+
+    @Resource
+    StringRedisTemplate template;
 
     @PostConstruct
     private void initTypes() {
@@ -60,7 +71,6 @@ public class TopicServiceImpl extends ServiceImpl<TopicMapper, Topic> implements
         String key = Const.Forum_TOPIC_PREVIEW_CACHE + pageNumber + ":" + type;
         List<TopicPreviewVO> list = cacheUtils.takeListFromCache(key, TopicPreviewVO.class);
         if(list != null){
-            System.out.println("cache:"+key+":"+list.size());
             return list;
         }
         Page<Topic> page = Page.of(pageNumber, 10);
@@ -69,7 +79,6 @@ public class TopicServiceImpl extends ServiceImpl<TopicMapper, Topic> implements
         else
             baseMapper.selectPage(page, Wrappers.<Topic>query().eq("type", type).orderByDesc("time"));
         List<Topic> topics = page.getRecords();
-        System.out.println(topics.size());
         if(topics.isEmpty()) return null;
         list = topics.stream().map(this::resolveToPreview).toList();
         cacheUtils.saveListToCache(key, list, 60);
@@ -90,6 +99,8 @@ public class TopicServiceImpl extends ServiceImpl<TopicMapper, Topic> implements
         TopicPreviewVO vo=new TopicPreviewVO();
         BeanUtils.copyProperties(accountMapper.selectById(topic.getUid()),vo);
         BeanUtils.copyProperties(topic,vo);
+        vo.setLike(baseMapper.interactCount(topic.getId(),"like"));
+        vo.setCollect(baseMapper.interactCount(topic.getId(),"collect"));
         List<String> images=new ArrayList<>();
         StringBuilder previewText=new StringBuilder();
         JSONArray ops=JSONObject.parseObject(topic.getContent()).getJSONArray("ops");
@@ -120,11 +131,86 @@ public class TopicServiceImpl extends ServiceImpl<TopicMapper, Topic> implements
         topic.setUid(uid);
         topic.setTime(new Date());
         if (this.save(topic)){
-            cacheUtils.deleteCache(Const.Forum_TOPIC_PREVIEW_CACHE +"*");
+            cacheUtils.deleteCachePattern(Const.Forum_TOPIC_PREVIEW_CACHE +"*");
             return null;
         }
         else
             return "内部错误，请联系管理员";
+    }
+
+    @Override
+    public TopicDetailVO getTopic(int tid) {
+        TopicDetailVO vo=new TopicDetailVO();
+        Topic topic=baseMapper.selectById(tid);
+        BeanUtils.copyProperties(topic,vo);
+        TopicDetailVO.Interact interact=new TopicDetailVO.Interact(
+                hasInteract(tid,topic.getUid(),"like"),
+                hasInteract(tid,topic.getUid(),"collect")
+        );
+        vo.setInteract(interact);
+        TopicDetailVO.User user=new TopicDetailVO.User();
+        vo.setUser(this.fillUserDetailsByPrivacy(user,topic.getUid()));
+        return vo;
+    }
+
+    private boolean hasInteract(int tid,int uid,String type){
+        String key=tid+":"+uid;
+        if (template.opsForHash().hasKey(type,key)){
+            return Boolean.parseBoolean(template.opsForHash().entries(type).get(key).toString());
+        }
+        return baseMapper.userInteractCount(tid,uid,type)>0;
+    }
+
+    @Override
+    public void interact(Interact interact, boolean state) {
+        String type=interact.getType();
+        synchronized (type.intern()){
+            template.opsForHash().put(type,interact.toKey(),Boolean.toString(state));
+            this.saveInteractSchedule(type);
+        }
+
+    }
+
+    private final Map<String,Boolean> state=new HashMap<>();
+    ScheduledExecutorService service= Executors.newScheduledThreadPool(2);
+    private void saveInteractSchedule(String type){
+        if (!state.getOrDefault(type,false)){
+            state.put(type,true);
+            service.schedule(()->{
+                this.saveInteract(type);
+                state.put(type,false);
+            },3, TimeUnit.SECONDS);
+        }
+
+    }
+
+    private void saveInteract(String type){
+        synchronized (type.intern()){
+            List<Interact> check=new LinkedList<>();
+            List<Interact> uncheck=new LinkedList<>();
+            template.opsForHash().entries(type).forEach((k,v)->{
+                if (Boolean.parseBoolean(v.toString())){
+                    check.add(Interact.parseInteract(k.toString(),type));
+                }else{
+                    uncheck.add(Interact.parseInteract(k.toString(),type));
+                }
+            });
+            if (!check.isEmpty())
+                baseMapper.addInteract(check,type);
+            if (!uncheck.isEmpty())
+                baseMapper.deleteInteract(uncheck,type);
+            template.delete(type);
+        }
+    }
+
+    private <T> T fillUserDetailsByPrivacy(T target, int uid){
+        AccountDetails details = detailsMapper.selectById(uid);
+        Account account=accountMapper.selectById(uid);
+        AccountPrivacy privacy = privacyMapper.selectById(uid);
+        String[] ignores = privacy.hiddenFields();
+        BeanUtils.copyProperties(account,target,ignores);
+        BeanUtils.copyProperties(details,target,ignores);
+        return target;
     }
 
     private boolean textLimitCheck(JSONObject object){
